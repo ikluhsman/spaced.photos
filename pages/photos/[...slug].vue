@@ -1,0 +1,58 @@
+<script lang="ts" setup>
+import { NuxtImg } from "#components";
+definePageMeta({
+  layout: "photos",
+});
+defineOgImageComponent('NuxtSeo')
+const route = useRoute();
+const { data: photo } = await useAsyncData(route.path, () => {
+  return queryCollection("photos")
+    .where("stem", "=", route.path.substring(1, route.path.length))
+    .first();
+});
+</script>
+<template>
+  <template v-if="photo">
+    <UPage>
+      <UPageHeader :title="photo.title" :description="photo.caption">
+        <template #headline>
+          <NuxtTime
+            :datetime="new Date(photo.capturedAt)"
+            month="long"
+            day="numeric"
+            year="numeric"
+          />
+        </template>
+      </UPageHeader>
+      <UPageBody class="md:px-4">
+        <UModal
+          :title="photo.title"
+          :description="photo.caption"
+          close-icon="i-lucide-x"
+          :close="{
+            color: 'primary',
+            variant: 'outline',
+            class: 'rounded-full',
+          }"
+          fullscreen
+        >
+          <NuxtImg :src="photo.image" />
+          <template #body>
+            <NuxtImg
+              :src="photo.image"
+              fit="outside"
+              class="justify-self-center self-center"
+            />
+          </template>
+        </UModal>
+      </UPageBody>
+    </UPage>
+  </template>
+  <template v-else>
+    <div class="text-center mt-12 empty-page">
+      <h1 class="text-2xl">Page Not Found</h1>
+      <p>Oops! The content you're looking for doesn't exist.</p>
+      <NuxtLink to="/">Go back home</NuxtLink>
+    </div>
+  </template>
+</template>
