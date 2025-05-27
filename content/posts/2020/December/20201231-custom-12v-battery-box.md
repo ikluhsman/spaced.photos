@@ -1,6 +1,6 @@
 ---
-title: My Battery Box
-description: The power sources I built from a Lithium battery and a marine battery box.
+title: Custom 12V Battery Box
+description: The 12v power box I built for my Astrophotography setup.
 image: /articles/equipment/12v-Lithium-Battery-Box.jpg
 date: 2020-12-31 00:00:00
 category: Equipment

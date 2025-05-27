@@ -1,8 +1,8 @@
 ---
 title: A Note About Celestial Catalogs
-description: Explaining catalog designations
+description: Quick explanation of catalog designations.
 date: 2025-05-21 06:33:00
-image: 
+image: /articles/Charles_Messier.jpg
 category: Software
 draft: false
 ---

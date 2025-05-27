@@ -26,3 +26,7 @@
   --ui-primary: var(--color-red-500);
   --ui-secondary: var(--color-amber-500);
 }
+
+@theme {
+  --breakpoint-xs: 30rem;
+}

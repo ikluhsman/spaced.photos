@@ -2,6 +2,13 @@
 const { data: page } = await useAsyncData("about", () => {
   return queryCollection("components").path("/components/about").first();
 });
+defineOgImageComponent('OgImagePost',{
+  title: page.value?.title,
+  description: page.value?.description,
+  theme: '#ffff00',
+  colorMode: 'dark',
+  site: "spaced.blog",
+})
 </script>
 <template>
   <UPage>

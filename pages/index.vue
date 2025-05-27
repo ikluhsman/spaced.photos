@@ -27,6 +27,12 @@ const { data: page } = await useAsyncData("home", () => {
 definePageMeta({
   layout: false,
 });
+defineOgImageComponent('OgImageHero',{
+  title: "spaced.blog",
+  description: "Check out Ian's astrophotography work!",
+  theme: '#ffff00',
+  colorMode: 'dark',
+})
 
 </script>
 <template>

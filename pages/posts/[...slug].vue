@@ -22,15 +22,22 @@
     </div>
   </template>
 </template>
-
 <script lang="ts" setup>
-defineOgImageComponent('NuxtSeo')
 import { NuxtImg } from "#components";
 definePageMeta({
   layout: "posts",
-});
+})
 const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection("posts").path(route.path).first();
-});
+})
+defineOgImageComponent('OgImagePost',{
+  title: page.value?.title,
+  description: page.value?.description,
+  theme: '#ffff00',
+  colorMode: 'dark',
+  image: page.value?.image,
+  site: "spaced.blog",
+  date: page.value?.date
+})
 </script>

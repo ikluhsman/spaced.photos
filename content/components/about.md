@@ -1,6 +1,6 @@
 ---
 title: About
-description: Hi! My name is Ian.
+description: An article all about my astrophotography hobby.
 ---
 
 ## Astrophotography & Me
