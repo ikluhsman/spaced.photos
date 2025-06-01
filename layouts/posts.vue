@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const { data } = await useAsyncData('navigation', () => {
+const { data: nav } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('posts', ['date']).order('date', 'DESC')
 })
-
-
 </script>
 <template>
   <UHeader title="spaced.photos">
@@ -31,14 +29,17 @@ const { data } = await useAsyncData('navigation', () => {
       </UTooltip>
     </template>
   </UHeader>
-  <UPage>
-    <template #left>
-      <UPageAside>
-        <UContentNavigation :navigation="data" highlight/>
-      </UPageAside>
-    </template>
-    <slot />
-  </UPage>
+  <UMain>
+    <UPage>
+      
+      <!-- <template #left>
+        <UPageAside>
+          <UContentNavigation :navigation="nav" highlight/>
+        </UPageAside>
+      </template> -->
+      <slot />
+    </UPage>
+  </UMain>
   <UFooter>
     <template #bottom>
       <p class="text-muted text-sm text-center">

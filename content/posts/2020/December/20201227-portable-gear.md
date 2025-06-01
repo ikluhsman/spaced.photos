@@ -1,6 +1,6 @@
 ---
 title: Portable Gear
-description: My self-powered portable setups to take along when I can't take my heavy gear along.
+description: My self-powered portable setups for when I can't take my heavy gear along.
 image: /articles/equipment/D850-SkyGuiderPro-WOZ61.jpg
 date: 2020-12-27 00:00:00
 category: Equipment

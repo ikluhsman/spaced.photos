@@ -33,18 +33,20 @@ const { data: nav } = await useAsyncData("navigation", () => {
       </UTooltip>
     </template>
   </UHeader>
-  <UPage class="lg:mr-4">
-    <template #left>
-      <UPageAside>
-        <UContentNavigation :navigation="nav" highlight>
+  <UMain>
+    <UPage class="lg:mr-4">
+      <template #left>
+        <UPageAside>
+          <UContentNavigation :navigation="nav" highlight>
 
-        </UContentNavigation>
-      </UPageAside>
-    </template>
-    <UPageBody>
-      <slot />
-    </UPageBody>
-  </UPage>
+          </UContentNavigation>
+        </UPageAside>
+      </template>
+      <UPageBody>
+        <slot />
+      </UPageBody>
+    </UPage>
+  </UMain>
   <UFooter>
     <template #bottom>
       <p class="text-muted text-sm text-center">

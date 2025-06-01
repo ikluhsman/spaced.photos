@@ -12,10 +12,14 @@ defineOgImageComponent('OgImagePost',{
 </script>
 <template>
   <UPage>
-    <UPageHeader :title="page?.title" :description="page?.description" />
+    <UPageHeader :title="page?.title" :description="page?.description"/>
+    <UMain>
+
+    
     <UPageBody>
       <ContentRenderer v-if="page" :value="page" />
     </UPageBody>
+    </UMain>
     <template #right>
       <UContentToc :links="page?.body.toc?.links" />
     </template>

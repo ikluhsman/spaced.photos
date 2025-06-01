@@ -19,11 +19,14 @@ export default defineNuxtConfig({
   seo: {
     meta: {
       title: "spaced.blog",
-      description: "This is a site showcasing my astro photography hobby.",
+      description: "A website showcasing my astro photography hobby.",
       themeColor: [
         { content: '#18181b', media: '(prefers-color-scheme: dark)' },
         { content: 'white', media: '(prefers-color-scheme: light)' },
       ],
+      author: 'Ian Kluhsman',
+      colorScheme: 'dark light',
+      applicationName: 'My App',
     }
   },
   css: ["~/assets/css/main.css"],

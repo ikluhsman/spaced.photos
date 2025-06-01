@@ -24,14 +24,11 @@
       </UTooltip>
     </template>
   </UHeader>
-  <UPage>
-    <template #left>
-      <UPageAside>
-        <UContentNavigation :navigation="navigation" />
-      </UPageAside>
-    </template>
-    <slot />
-  </UPage>
+  <UMain>
+    <UPage>
+      <slot />
+    </UPage>
+  </UMain>
   <UFooter>
     <template #bottom>
       <p class="text-muted text-sm text-center">

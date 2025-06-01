@@ -2,14 +2,14 @@
 title: Iris Nebula
 description: The Iris Nebula is a 'circumpolar' object that is small, but has stunning deep blue-colored features.
 category: Nebulae
-image: /catalogue/c078968-20201120-Iris.jpg
+image: /catalogue/20201120-Iris.jpg
 date: 2020-11-21 10:15:00
 draft: false
 ---
 
 I was really excited when I learned what the term "circumpolar" means. It means that an object you are viewing in the sky will never disappear behind the horizon, because it is close enough to the polar axis of Earth and is therefore visible to you all night in relation to your latitude. That means for the Iris Nebula that I had ALL NIGHT to photograph it!
 
-![c078968-20201120-Iris.jpg](/catalogue/c078968-20201120-Iris.jpg)
+![20201120-Iris.jpg](/catalogue/20201120-Iris.jpg)
 
 ## My Thoughts
 

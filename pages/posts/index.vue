@@ -17,7 +17,7 @@ defineOgImageComponent('OgImageHero',{
 })
 </script>
 <template>
-  <UBlogPosts>
+  <UPageColumns>
     <UBlogPost
       v-for="(post, index) in posts"
       :key="index"
@@ -26,5 +26,5 @@ defineOgImageComponent('OgImageHero',{
       :to="post.path"
       :image="post.image ? post.image : ''"
     />
-  </UBlogPosts>
+</UPageColumns>
 </template>

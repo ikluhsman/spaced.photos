@@ -1,15 +1,23 @@
 <script lang="ts" setup>
-import { NuxtImg } from "#components";
+
 definePageMeta({
   layout: "photos",
-});
-defineOgImageComponent('NuxtSeo')
+})
 const route = useRoute();
 const { data: photo } = await useAsyncData(route.path, () => {
   return queryCollection("photos")
     .where("stem", "=", route.path.substring(1, route.path.length))
     .first();
-});
+})
+defineOgImageComponent('OgImagePost',{
+  title: photo.value?.title,
+  description: photo.value?.caption,
+  theme: '#ffff00',
+  colorMode: 'dark',
+  image: photo.value?.image,
+  site: "spaced.blog",
+  date: photo.value?.capturedAt
+})
 </script>
 <template>
   <template v-if="photo">
