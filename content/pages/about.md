@@ -1,7 +1,19 @@
 ---
-title: About
-description: An article all about my astrophotography hobby.
+date: 2025-06-06 00:00:00
+badge: 
+authors:
+image:
+tags:
+draft: false
 ---
+
+![Veil Nebula](/catalogue/20201206-Veil-Nebula.jpg)
+
+# About This Site
+
+In this article I talk about how and why this site was built, my imaging process, and how I got into the hobby.
+
+<!--more-->
 
 ## Astrophotography & Me
 I got into Astrophotography in 2020, and since have found it to be a wonderful hobby. I have always had a curiosity for studying outer space.

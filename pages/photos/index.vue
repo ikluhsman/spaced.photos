@@ -15,14 +15,16 @@ defineOgImageComponent("OgImageHero", {
 <template>
   <template v-if="photos?.length == 0"> No photos found. </template>
   <template v-else>
-    <UPageGrid>
-      <ULink as="div" v-for="photo in photos" :to="photo.path">
-        <NuxtImg
-          :src="photo.image"
-          
-          class=""
-          :to="photo.path"
-      /></ULink>
-    </UPageGrid>
+    <UPage>
+      <UPageHeader title="Photos" description="Photos and meta." />
+      <UPageBody>
+        <UPageGrid>
+          <ULink v-for="photo in photos" :to="photo.path">
+            <NuxtImg :src="photo.image" class="object-cover aspect-retro" />
+          </ULink>
+        </UPageGrid>
+      </UPageBody>
+    </UPage>
   </template>
 </template>
+

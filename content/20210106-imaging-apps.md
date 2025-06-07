@@ -1,6 +1,6 @@
 ---
-title: Imaging Software
-description: An introduction to Astrophotography image processing software.
+title: Imaging Apps
+description: An introduction to Astrophotography image processing apps.
 date: 2021-01-06 10:50:00
 image: 
 category: Software

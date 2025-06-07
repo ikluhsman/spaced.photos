@@ -1,27 +1,26 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData("about", () => {
-  return queryCollection("components").path("/components/about").first();
+  return queryCollection("pages").path("/pages/about").first();
 });
-defineOgImageComponent('OgImagePost',{
+defineOgImageComponent("OgImagePost", {
   title: page.value?.title,
   description: page.value?.description,
-  theme: '#ffff00',
-  colorMode: 'dark',
+  theme: "#ffff00",
+  colorMode: "dark",
   site: "spaced.blog",
-})
+});
 </script>
 <template>
-  <UPage>
-    <UPageHeader :title="page?.title" :description="page?.description"/>
-    <UMain>
-
-    
-    <UPageBody>
-      <ContentRenderer v-if="page" :value="page" />
-    </UPageBody>
-    </UMain>
-    <template #right>
-      <UContentToc :links="page?.body.toc?.links" />
-    </template>
-  </UPage>
+  <template v-if="page">
+    <UPage>
+      <UPageBody>
+        <UPageSection>
+          <ContentRenderer v-if="page" :value="page" />
+        </UPageSection>
+      </UPageBody>
+      <template #right v-if="page.body.toc">
+        <UContentToc :links="page.body.toc.links" />
+      </template>
+    </UPage>
+  </template>
 </template>

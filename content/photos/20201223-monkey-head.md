@@ -28,3 +28,25 @@
   calibrationSoftware: PixInsight
   imageProcessingSoftware: PixInsight
 ---
+
+| meta | |
+| --- | --- |
+| Camera | ZWO CCD ASI183MC Pro
+| Lens | 
+| Filter | no
+| Telescope | Explore Scientific ED102-FCD100
+| Mount | Explore Scientific EXOS II w/PMC-Eight
+| Aperture | 102mm
+| ISO Speed | n/a
+| Focal Length | 714mm
+| Focal Ratio | f/7
+| Exposure Time (min) | 100
+| Exposures | 20
+| Exposures Integrated | 20
+| Calibration Frames Taken | true
+| Calibration Frames | [Flat,Dark,Bias]
+| Image Acquisition Software | KStars/EKOS
+| Telescope Auto Guiding Software | KStars/EKOS
+| Calibration Software | PixInsight
+| Image Processing Software | PixInsight
+

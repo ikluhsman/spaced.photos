@@ -16,23 +16,37 @@ export default defineAppConfig({
     },
   },
   uiPro: {
-    pageHeader: {
+    page: {
       slots: {
-        root: 'relative border-b border-default py-8 px-2 sm:px-0',
-        container: '',
-        wrapper: 'flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4',
-        headline: 'mb-2.5 text-sm font-semibold text-primary flex items-center gap-1.5',
-        title: 'text-3xl sm:text-4xl text-pretty font-bold text-highlighted',
-        description: 'text-lg text-pretty text-muted',
-        links: 'flex flex-wrap items-center gap-1.5'
+        root: 'flex flex-col lg:grid lg:grid-cols-10 lg:gap-10 sm:px-6 md:px-16',
+        left: 'lg:col-span-2',
+        center: 'lg:col-span-8',
+        right: 'lg:col-span-2 order-first lg:order-last'
       },
       variants: {
-        title: {
-          true: {
-            description: 'mt-4'
+        left: {
+          true: ''
+        },
+        right: {
+          true: ''
+        }
+      },
+      compoundVariants: [
+        {
+          left: true,
+          right: true,
+          class: {
+            center: 'lg:col-span-6'
+          }
+        },
+        {
+          left: false,
+          right: false,
+          class: {
+            center: 'lg:col-span-10'
           }
         }
-      }
+      ]
     },
     blogPost: {
       slots: {
@@ -161,5 +175,8 @@ export default defineAppConfig({
         variant: "outline",
       },
     },
+    
+  
   },
+  
 });

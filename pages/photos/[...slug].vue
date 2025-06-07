@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-
 definePageMeta({
   layout: "photos",
-})
+});
 const route = useRoute();
 const { data: photo } = await useAsyncData(route.path, () => {
   return queryCollection("photos")
     .where("stem", "=", route.path.substring(1, route.path.length))
     .first();
-})
-defineOgImageComponent('OgImagePost',{
+});
+
+defineOgImageComponent("OgImagePost", {
   title: photo.value?.title,
   description: photo.value?.caption,
-  theme: '#ffff00',
-  colorMode: 'dark',
+  theme: "#ffff00",
+  colorMode: "dark",
   image: photo.value?.image,
   site: "spaced.blog",
-  date: photo.value?.capturedAt
-})
+  date: photo.value?.capturedAt,
+});
 </script>
 <template>
   <template v-if="photo">
@@ -32,27 +32,26 @@ defineOgImageComponent('OgImagePost',{
           />
         </template>
       </UPageHeader>
-      <UPageBody class="md:px-4">
+      <UPageBody>
         <UModal
-          :title="photo.title"
-          :description="photo.caption"
-          close-icon="i-lucide-x"
           :close="{
             color: 'primary',
             variant: 'outline',
-            class: 'rounded-full',
+            class: 'rounded-full fixed',
           }"
           fullscreen
+          :ui="{ header: 'landscape:min-h-0 landscape:h-0 landscape:p-0' }"
         >
-          <NuxtImg :src="photo.image" />
+          <NuxtImg :src="photo.image" class="justify-self-center self-center" />
           <template #body>
             <NuxtImg
               :src="photo.image"
-              fit="outside"
-              class="justify-self-center self-center"
+              fit="cover"
+              class="justify-self-center self-center landscape:object-fill"
             />
           </template>
         </UModal>
+        <ContentRenderer :value="photo" />
       </UPageBody>
     </UPage>
   </template>

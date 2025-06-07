@@ -7,9 +7,13 @@ date: 2020-10-31 00:00:00
 draft: false
 ---
 
-![w-full Halloween's Blue Moon](/catalogue/20201031-moon.jpg)
+I took this picture in my back yard with a tripod and my Nikon D850 Camera with a Sigma 150-600mm Zoom lens mounted on it.
 
-I took this picture in my back yard with a tripod and my Nikon D850 Camera with a Sigma 150-600mm Zoom lens mounted on it. I didn't need any astronomy equipment because the moon is so bright it keeps exposures short. This means there is no need to track it or otherwise move the camera with the motion of the moon's orbit.
+<!--more-->
+
+I didn't need any astronomy equipment because the moon is so bright it keeps exposures short. This means there is no need to track it or otherwise move the camera with the motion of the moon's orbit.
+
+![w-full Halloween's Blue Moon](/catalogue/20201031-moon.jpg)
 
 I used the bracketing feature on the camera to shoot 9 exposures which I then stacked in Affinity Photo to create a more detailed HDR image, then processed the resulting image in the development suite within Affinity Photo.  
 

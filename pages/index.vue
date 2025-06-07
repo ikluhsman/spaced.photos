@@ -5,30 +5,23 @@ const links = ref([
     to: "/photos",
     icon: "i-lucide-image",
     color: "neutral",
-    variant: "subtle"
+    variant: "subtle",
   },
   {
     label: "Read Articles",
-    to: "/posts",
+    to: "/blog",
     icon: "i-lucide-image",
     color: "neutral",
     variant: "subtle",
   },
 ]);
-const items = [
-  "/catalogue/20201205-M31-Andromeda.jpg",
-  "/catalogue/20201115-M31-Andromeda.jpg",
-  "/catalogue/20201206-Veil-Nebula.jpg",
-  "/catalogue/20201120-Iris.jpg",
-  "/catalogue/20201215-M42-GreatOrionNebula.jpg",
-  "/catalogue/20201209-M33-TriangulumPinwheel.jpg",
-];
 const { data: page } = await useAsyncData("home", () => {
-  return queryCollection("components").path("/components/home").first();
+  return queryCollection("pages").path("/pages/home").first();
 });
-definePageMeta({
-  layout: false,
-});
+const { data: posts } = await useAsyncData("posts", () =>
+  queryCollection("posts").order("date", "DESC").limit(9).all()
+);
+
 defineOgImageComponent("OgImageHero", {
   title: "spaced.blog",
   description: "Check out Ian's astrophotography work!",
@@ -37,26 +30,41 @@ defineOgImageComponent("OgImageHero", {
 });
 </script>
 <template>
-  <UPageHero title="spaced.blog" :links="links as any" reverse>
-    <template #description>
-      <ContentRenderer :value="page" />
-    </template>
-    <UCarousel
-      v-slot="{ item }"
-      :items="items"
-      class="w-full max-w-2xl mx-auto"
-      :duration="5"
-      slidesToScroll="auto"
-      autoplay
-      loop
-      dots
-      fade
-      :ui="{
-        container: 'transition-[height]',
-        dot: 'w-6 h-1',
-      }"
-    >
-      <NuxtImg :src="item" class="justify-self-center rounded-md" />
-    </UCarousel>
-  </UPageHero>
+  <UPage>
+    <UPageHero title="spaced.blog" :links="links" reverse>
+      <template #description>
+        <ContentRenderer :value="page" />
+      </template>
+    </UPageHero>
+    <UPageSection>
+      <UCarousel
+        v-slot="{ item }"
+        :items="posts"
+        class="w-full max-w-2xl mx-auto"
+        :duration="5"
+        slidesToScroll="auto"
+        arrows
+        loop
+        dots
+        fade
+        :ui="{
+          container: 'transition-[height]',
+          dot: 'w-6 h-1',
+          item: 'basis-1/3',
+        }"
+      >
+        <UBlogPost
+          class="self-center"
+          :date="item.date"
+          :title="item.title"
+          :image="item.image"
+          :description="item.description"
+          :to="item.stem"
+          :ui="{
+            date: 'font-bold uppercase',
+          }"
+        ></UBlogPost>
+      </UCarousel>
+    </UPageSection>
+  </UPage>
 </template>
